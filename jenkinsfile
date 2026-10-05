@@ -5,10 +5,10 @@ pipeline {
             steps { checkout scm }
         }
         stage('Build') {
-            steps { bat 'python app.py' }
+            steps { bat '"C:\\Users\\ivann\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" app.py' }
         }
         stage('Test') {
-            steps { bat 'python test_app.py' }
+            steps { bat '"C:\\Users\\ivann\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" test_app.py' }
         }
         stage('Deploy') {
             steps { echo 'Deploying the app...' }
