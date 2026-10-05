@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps { checkout scm }
+        }
+        stage('Build') {
+            steps { bat 'python app.py' }
+        }
+        stage('Test') {
+            steps { bat 'python test_app.py' }
+        }
+        stage('Deploy') {
+            steps { echo 'Deploying the app...' }
+        }
+    }
+    post {
+        success { echo 'Pipeline SUCCESS' }
+        failure { echo 'Pipeline FAILED' }
+    }
+}
