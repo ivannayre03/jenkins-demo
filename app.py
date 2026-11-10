@@ -17,7 +17,7 @@ VERSION = "1.0.0"
 # Core logic (this is what the Jenkins "Test" stage checks)
 # ---------------------------------------------------------------------------
 def add(a, b):
-    return a + b
+    return a - b
 
 
 def subtract(a, b):
